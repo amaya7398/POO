@@ -1,5 +1,5 @@
 public enum Brand{
-    LG("LG"), PANASONIC("Panasonic"), DAEWO("Daewo"), CARRIER("Carrier");
+    LG("LG"), PANASONIC("Panasonic"), DAEWO("Daewo"), CARRIER("Carrier"), None("NONE");
     public final String brandName;
     public final int brandCode;
     

@@ -1,8 +1,8 @@
 public class DeviceSpecs{
-    private Brand brand;
-    private String model;
-    private boolean wifiBuiltIn;
-    private boolean bluetoothwifiBuiltIn; 
+    protected Brand brand;
+    protected String model;
+    protected boolean wifiBuiltIn;
+    protected boolean bluetoothwifiBuiltIn; 
 
     public DeviceSpecs(){
         this.brand = null;
@@ -18,18 +18,7 @@ public class DeviceSpecs{
         this.bluetoothwifiBuiltIn = bluetoothwifiBuiltIn;
     }
 
-    public void setBrand(Brand brand){
-        this.brand = brand;
-    }
-    public void setModel(String model){
-        this.model = model;
-    }
-    public void setWifiBuiltIn(Boolean wifiBuiltIn){
-        this.wifiBuiltIn = wifiBuiltIn;
-    }
-    public void setBluetoothwifiBuiltIn(Boolean bluetoothwifiBuiltIn){
-        this.bluetoothwifiBuiltIn = bluetoothwifiBuiltIn;
-    }
+    //======GETS
     public Brand getBrand(){
         return brand;
     }
@@ -42,16 +31,28 @@ public class DeviceSpecs{
     public boolean getBluetoothwifiBuiltIn(){
         return bluetoothwifiBuiltIn;
     }
+    
+    //======SETS
+    public void setBrand(Brand brand){
+        this.brand = brand;
+    }
+    public void setModel(String model){
+        this.model = model;
+    }
+    public void setWifiBuiltIn(Boolean wifiBuiltIn){
+        this.wifiBuiltIn = wifiBuiltIn;
+    }
+    public void setBluetoothwifiBuiltIn(Boolean bluetoothwifiBuiltIn){
+        this.bluetoothwifiBuiltIn = bluetoothwifiBuiltIn;
+    }
 
     public String toString(){
 
         String salida = null;
-
-        salida = "Brand: " + this.brand.getBrandName() + "\n"
-                 + "Model: " + this.model + "\n" +
-                 "Wofiiiii: " + this.wifiBuiltIn + "\n" +
+        salida = "Brand: " + this.brand.getBrandName() + "\n" +
+                 "Model: " + this.model + "\n" +
+                 "Wifi: " + this.wifiBuiltIn + "\n" +
                  "Bluetooth: " + this.bluetoothwifiBuiltIn + "\n";
-                 
-                 return salida;
+        return salida;
     } 
 }

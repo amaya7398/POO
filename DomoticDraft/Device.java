@@ -1,73 +1,59 @@
 public class Device {
-    private int Id;
-    private boolean Status;
-    private String Name;
+    private int id;
+    private boolean status;
+    private String name;
     private DeviceSpecs deviceSpecs;
     
     public Device() {
-        this.Id = 0;
-        this.Status = false;
-        this.Name = null;
-        
+        this.id = 0;
+        this.status = false;
+        this.name = null;
+        this.deviceSpecs = null;
     }
 
-    public Device(int Id, boolean Status, String Name, DeviceSpecs deviceSpecs) {
-        this.Id = Id;
-        this.Status = Status;
-        this.Name = Name;
+    public Device(int id, boolean status, String name, DeviceSpecs deviceSpecs) {
+        this.id = id;
+        this.status = status;
+        this.name = name;
         this.deviceSpecs = deviceSpecs;
+    }
+
+    //======GETS
+    public int getId() {
+        return id;
+    }
+    public boolean getStatus(){
+        return status;
+    }
+    public String getName(){
+        return name;
     }
     public DeviceSpecs getdeviceSpecs(){
         return deviceSpecs;
     }
-
+    
+    //======SETS
+    public void setId(int id){
+        this.id = id;
+    }
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
     public void setdeviceSpecs(DeviceSpecs deviceSpecs){
         this.deviceSpecs = deviceSpecs;
-    }
-
-
-    public int getId() {
-        return Id;
-    }
-
-    public boolean getStatus(){
-        return Status;
-    }
-
-    public String getName(){
-        return Name;
-    }
-    
-    public void setId(int id){
-        this.Id = id;
-    }
-
-    public void setStatus(boolean status) {
-        this.Status = status;
-    }
-    
-    public void setName(String Name){
-        this.Name = Name;
     }
     
 
     public String toString(){
         String output;
-        output = "ID: " + this.Id +"\n" +
-                "Status: " + this.Status + "\n"+
-                "Name: " + this.Name + "\n" +
-                //"Device specs: \n" + this.deviceSpecs.toString();
-                //"Brand: " + deviceSpecs.getBrand() + "\n"+
-                //"Model: " + deviceSpecs.getModel() + "\n"+
-                //"Wifi: " + deviceSpecs.getWifiBuiltIn() + "\n"+
-                //"Bluetooth: " + deviceSpecs.getBluetoothwifiBuiltIn() + "\n";
-                "Braaaaand: " + this.deviceSpecs.getBrand() + "\n"+
-                "Brand: " + deviceSpecs.getBrand() + "\n"+
-                "Model: " + this.deviceSpecs.getModel() + "\n"+
-                "Wifi: " + this.deviceSpecs.getWifiBuiltIn() + "\n"+
-                "Bluetooth: " + this.deviceSpecs.getBluetoothwifiBuiltIn() + "\n";
-
-               
+        output = "ID: " + this.id +"\n" +
+                "Status: " + this.status + "\n"+
+                "Name: " + this.name + "\n" +
+                deviceSpecs.toString();
+                
         return output;
     }
   
