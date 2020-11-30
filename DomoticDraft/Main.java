@@ -4,25 +4,25 @@ public class Main{
 
     public static void main(String[] args) {
         
-        Inventory inventario = new Inventory(6);
-    
+        Inventory inventario = new Inventory();
+        /*
         System.out.println(inventario);
         inventario.deviceRemove(3);
         System.out.println(inventario);
+        */
 
-        int n2search = 1; //Cambiar valor, solo existe una matriz de 6 elementos (0-5)
-        int busqueda = inventario.searchDevice( n2search );
+        //Cambiar valor, solo existe una matriz de 6 elementos (0-5)
+        int searching4 = 3;
+        int busqueda = inventario.searchDevice(searching4);
 
         if (busqueda != -1){
-            System.out.println("Dispositivo existente: " + inventario.searchDevice(2) + "\n\n");
-            //inventario.device
+            System.out.println("Dispositivo existente, index = " + inventario.searchDevice(searching4) + "\n");
+            System.out.println(inventario.getDevice(searching4));
         } else {
-            System.out.println("Dispositivo no existe:\n\n");
+            System.out.println("Dispositivo no existe:\n");
         }
-
         
         //inventario.createInventory(); //Sin implementación, fue añadido manual
-        //Device prueba = new Device(4, true, "AG", new DeviceSpecs(Brand.LG , "123", true, false));
         //System.out.println(prueba);
         
     }

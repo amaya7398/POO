@@ -1,15 +1,8 @@
 public class DeviceSpecs{
-    protected Brand brand;
-    protected String model;
-    protected boolean wifiBuiltIn;
-    protected boolean bluetoothwifiBuiltIn; 
-
-    public DeviceSpecs(){
-        this.brand = null;
-        this.model = null;
-        this.wifiBuiltIn = false;
-        this.bluetoothwifiBuiltIn = false;
-    }
+    private Brand brand;
+    private String model;
+    private boolean wifiBuiltIn;
+    private boolean bluetoothwifiBuiltIn; 
 
     public DeviceSpecs(Brand brand, String model, Boolean wifiBuiltIn, Boolean bluetoothwifiBuiltIn){
         this.brand = brand;
@@ -44,6 +37,15 @@ public class DeviceSpecs{
     }
     public void setBluetoothwifiBuiltIn(Boolean bluetoothwifiBuiltIn){
         this.bluetoothwifiBuiltIn = bluetoothwifiBuiltIn;
+    }
+
+    public boolean equals(DeviceSpecs deviceSpecs){
+        boolean result = false;
+        if (this.brand.equals(deviceSpecs.getBrand()) && 
+            this.model == deviceSpecs.getModel()){
+            result = true;
+        }
+        return result;
     }
 
     public String toString(){

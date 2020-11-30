@@ -3,10 +3,7 @@ public class Inventory{
     //static int numDevices;
 
     public Inventory(){
-        this.devices = null;
-    }
-
-    public Inventory(int nDevices){
+        int nDevices = 6;
         devices = new Device[nDevices]; //Estos datos los ingresaría el usuario con addInventory()
         devices[0] = new Device(00, true, "AG", new DeviceSpecs(Brand.LG , "123", true, false));
         devices[1] = new Device(01, false, "AB", new DeviceSpecs(Brand.DAEWO , "456", true, false));
@@ -17,51 +14,59 @@ public class Inventory{
     }
 
     //public void addInventory(){}
-/*
-    public Device getDevice(int nDevice){
-        devices[nDevice]
-    }
-*/
 
+    public Device getDevice(int nDevice){
+        return devices[nDevice];
+    }
+
+    /*Busqueda por ID
     public int searchDevice(int id){
         int nDevices = devices.length;
-        
         for (int i=0; i < nDevices; i++){
             if (devices[i] instanceof Device && devices[i].getId() == id){
                 return i;
             }
         }
         return -1;
+    }*/
+    public int searchDevice(int nDevice){
+        int nDevices = devices.length;
+        int index = -1;
+        
+        for (int i=0; i < nDevices; i++){
+            if (devices[i].equals(devices[nDevice])){
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
-    public boolean deviceRemove(int id){
-        int iDevice = searchDevice(id);
+    public boolean deviceRemove(int nDevice){
+        boolean result = false;
+        int iDevice = searchDevice(nDevice);
         if(iDevice != -1){
             reOrganizeDevices(iDevice);
-            return true;
+            result = true;
         }
-        return false;
+        return result;
     }
     
-    public int reOrganizeDevices(int iDevice){
-        int exit = -1;
+    public void reOrganizeDevices(int iDevice){
 
         for ( int i = iDevice; i < devices.length; i++){
             if (i < (devices.length-1) ){
                 devices[i]= devices[i+1];
-                exit = 1;
-            } else if (i < devices.length){
+            } else {
                 devices[i] = new Device(0, false, null, new DeviceSpecs(Brand.None, null, false, false));
-                exit = 1;
             }
         }
-        return exit;
     }
 
     public String toString() {
         String output = "";
         for (int i=0; i < devices.length; i++){
-            output = output + "DISPOSITIVO[" + i + "]:\n" + devices[i].toString() + "\n";
+            output = output + "DISPOSITIVO[" + (i+1) + "]:\n" + devices[i].toString() + "\n";
         }      
         return output;
     }

@@ -45,7 +45,6 @@ public class Device {
     public void setdeviceSpecs(DeviceSpecs deviceSpecs){
         this.deviceSpecs = deviceSpecs;
     }
-    
 
     public String toString(){
         String output;
@@ -55,6 +54,18 @@ public class Device {
                 deviceSpecs.toString();
                 
         return output;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        boolean result = false;
+        if(o instanceof Device){
+            Device d = (Device) o;
+            if((id == d.id) && (name.equals(d.name))&&(deviceSpecs.equals(d.deviceSpecs))){
+                result = true;
+            }
+        }
+        return result;
     }
   
 }    
