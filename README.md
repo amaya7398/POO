@@ -10,5 +10,3 @@ Un dispositivo puede actualizarse, un equipo se podría mandar a reparar o se le
 nuevas herramientas, constantemente se están sacando nuevas versiones, con diferentes caracteristicas y de esta manera no
 se podrían usar sus valores como constantes; otro ejemplo podría ser el que un device puede ser cambiado de zona y junto con
 ello también limitaciones/restricciones.
-
-![calendario](https://docs.google.com/spreadsheets/d/1JCRgN7IMtjGCi-xUv9jH37zGM__SNaFIltJlsuRAYro/edit#gid=0) 
